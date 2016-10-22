@@ -1,13 +1,12 @@
 require.config({{
     paths: {{
         d3: "http://127.0.0.1:8888/files/d3.v4.min",
-        mydata: "http://127.0.0.1:8888/files/mydata"
+        mydata: "http://127.0.0.1:8888/files/mydata",
+        underscore: "http://underscorejs.org/underscore-min"
      }}
  }});
 
-
-
-require(["d3", "mydata"], function(d3,mydata) {{
+require(["d3", "mydata", "underscore"], function(d3,mydata, _) {{
 
     debugger;
     var myElem = document.getElementById('squares_svg');
@@ -54,9 +53,10 @@ require(["d3", "mydata"], function(d3,mydata) {{
         .attr("y",function(d,i){{return 100 + d*2}})
         console.log(1234)
 
-    $.getJSON( "../files/mydata.json", function( data ) {{
-        debugger;
-    }}
-    );
+    // $.getJSON( "../files/mydata.json", function( data ) {{
+    //     console.log(data)
+    // }}
+
+    // );
 
 }})
