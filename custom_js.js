@@ -1,12 +1,15 @@
 require.config({{
     paths: {{
-        d3: "https://d3js.org/d3.v4.min"
+        d3: "http://127.0.0.1:8888/files/d3.v4.min",
+        mydata: "http://127.0.0.1:8888/files/mydata"
      }}
  }});
 
-require(["d3"], function(d3) {{
 
 
+require(["d3", "mydata"], function(d3,mydata) {{
+
+    debugger;
     var myElem = document.getElementById('squares_svg');
 
     if (myElem === null) {{
@@ -49,5 +52,11 @@ require(["d3"], function(d3) {{
         .attr("fill", function(d) {{return color(Math.abs(d)) }})
         .attr("x", function(d,i){{return 10 + my_sum(squares.slice(0,i)) +i*5 }})
         .attr("y",function(d,i){{return 100 + d*2}})
+        console.log(1234)
+
+    $.getJSON( "../files/mydata.json", function( data ) {{
+        debugger;
+    }}
+    );
 
 }})

@@ -13,5 +13,4 @@ def display_interface():
     global_vars["text_widget"] =  widgets.Text()
     global_vars["text_widget"].on_submit(handle_submit)
     display(global_vars["text_widget"])
-
-display_interface()
+    
