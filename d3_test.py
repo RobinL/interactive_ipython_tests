@@ -23,14 +23,15 @@ class Interface:
     def display_d3(self,caller):
         js_template = open("custom_js.js").read()
         script = self.get_d3_script(js_template)
+        clear_output(True)
         display(Javascript(script))
     
 
 # http://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html
     def display_interface(self):
-        self.widgets["square_size_widget"] = FloatSlider(description="Choose square size: ", value = 20, min = 5, max=40,continuous_update=True)
-        self.widgets["num_squares_widget"] = IntSlider(description="Choose num squares: ", value = 20, min = 1, max=100,continuous_update=True)
-        self.widgets["step_widget"] = FloatSlider(description="Choose step ", value = 3, min = 1, max=10,continuous_update=True)
+        self.widgets["square_size_widget"] = FloatSlider(description="Choose square size: ", value = 20, min = 5, max=40,continuous_update=False)
+        self.widgets["num_squares_widget"] = IntSlider(description="Choose num squares: ", value = 20, min = 1, max=100,continuous_update=False)
+        self.widgets["step_widget"] = FloatSlider(description="Choose step ", value = 3, min = 1, max=10,continuous_update=False)
 
         widget_list = []
         for k,v in self.widgets.iteritems():
