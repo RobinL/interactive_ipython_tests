@@ -23,7 +23,7 @@ class Interface:
     def display_d3(self,caller):
         js_template = open("custom_js.js").read()
         script = self.get_d3_script(js_template)
-        clear_output(True)
+        clear_output(wait=True)
         display(Javascript(script))
     
 
